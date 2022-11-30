@@ -1,25 +1,103 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Products from "./components/products";
 
+const products = [
+  {
+    pID: 1,
+    pName: "Fresh Milk",
+    desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit fuga autem maiores necessitatibus.",
+    isAvailable: true,
+    image: "images/fresh-milk.png",
+    price: 12,
+  },
+  {
+    pID: 2,
+    pName: "Cottage Cheese",
+    desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit fuga autem maiores necessitatibus.",
+    isAvailable: false,
+    image: "images/cottage-cheese.png",
+    price: 10,
+  },
+  {
+    pID: 3,
+    pName: "Brocoli",
+    desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit fuga autem maiores necessitatibus.",
+    isAvailable: true,
+    image: "images/brocoli.png",
+    price: 15,
+  },
+  {
+    pID: 4,
+    pName: "oranges",
+    desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit fuga autem maiores necessitatibus.",
+    isAvailable: true,
+    image: "images/oranges.png",
+    price: 20,
+  },
+  {
+    pID: 5,
+    pName: "Olive oil",
+    desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit fuga autem maiores necessitatibus.",
+    isAvailable: false,
+    image: "images/olive-oil.png",
+    price: 14,
+  },
+];
 function App() {
+  // Method 1 using JSX
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="row">
+      <div className="col-lg-8 mx-auto">
+        <ul className="list-group shadow">
+          <Products
+            id={products[0].pID}
+            name={products[0].name}
+            description={products[0].desc}
+            isAvailable={products[0].isAvailable}
+            imageUrl={products[0].image}
+            price={products[0].price}
+          ></Products>
+          <Products
+            id={products[1].pID}
+            name={products[1].name}
+            description={products[1].desc}
+            isAvailable={products[1].isAvailable}
+            imageUrl={products[1].image}
+            price={products[1].price}
+          ></Products>
+          <Products
+            id={products[2].pID}
+            name={products[2].name}
+            description={products[2].desc}
+            isAvailable={products[2].isAvailable}
+            imageUrl={products[2].image}
+            price={products[2].price}
+          ></Products>
+          <Products
+            id={products[3].pID}
+            name={products[3].name}
+            description={products[3].desc}
+            isAvailable={products[3].isAvailable}
+            imageUrl={products[3].image}
+            price={products[3].price}
+          ></Products>
+          <Products
+            id={products[4].pID}
+            name={products[4].name}
+            description={products[4].desc}
+            isAvailable={products[4].isAvailable}
+            imageUrl={products[4].image}
+            price={products[4].price}
+          ></Products>
+        </ul>
+      </div>
     </div>
   );
+
+  // Method 2 using JS
+  // const p = document.createElement("p");
+  // p.textContent="This is a demo Paragraph";
+  // return p;
 }
 
 export default App;
