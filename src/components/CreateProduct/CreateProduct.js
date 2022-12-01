@@ -1,6 +1,10 @@
 import ProductForm from "./ProductForm";
 
-function CreateProduct() {
+function CreateProduct(props) {
+  function onCreateProduct(product) {
+    props.createProduct(product);
+  }
+
   return (
     <div className="row">
       <div
@@ -11,7 +15,7 @@ function CreateProduct() {
           marginBottom: 20,
         }}
       >
-        <ProductForm />
+        <ProductForm createProduct={onCreateProduct}></ProductForm>
       </div>
     </div>
   );

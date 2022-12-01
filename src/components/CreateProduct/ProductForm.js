@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-function ProductForm() {
+function ProductForm(props) {
   let [pName, updateName] = useState("");
   let [pPrice, updatePrice] = useState("");
   let [pDescription, updateDescription] = useState("");
@@ -44,14 +44,15 @@ function ProductForm() {
   function createProductHandler(event) {
     event.preventDefault(); //Stop default behavior of reload on click of form submit
     let product = {
-      pID: Math.random(10),
       pName: pName,
       desc: pDescription,
       isAvailable: Boolean(pAvailability),
       image: pImageUrl,
       price: Number(pPrice),
     };
-    console.log(product);
+    
+    props.createProduct(product);
+
     updateName("");
     updatePrice("");
     updateDescription("");
