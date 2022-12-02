@@ -51,13 +51,15 @@ function ProductForm(props) {
       price: Number(pPrice),
     };
     
-    props.createProduct(product);
-
+    
     updateName("");
     updatePrice("");
     updateDescription("");
     updateAvailability("");
     updateImageUrl("");
+
+    props.createProduct(product);
+    props.onCancel();
   }
 
   return (
@@ -127,6 +129,7 @@ function ProductForm(props) {
       <button type="submit" className="btn btn-primary">
         Add Product
       </button>
+      <button type="button" onClick={props.onCancel}>Cancel</button>
     </form>
   );
 }
